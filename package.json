@@ -1,0 +1,42 @@
+{
+  "name": "strapi-plugin-vtex",
+  "version": "1.0.0",
+  "description": "A strapi plugin that implements the basic integration with vtex public api.",
+  "author": {
+    "name": "André Ciornavei",
+    "email": "andre.ciornavei@gmail.com",
+    "url": "https://github.com/andreciornavei"
+  },
+  "maintainers": [
+    {
+      "name": "André Ciornavei",
+      "email": "andre.ciornavei@gmail.com",
+      "url": "https://github.com/andreciornavei"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreciornavei/strapi-plugin-vtex.git"
+  },
+  "homepage": "https://github.com/andreciornavei/strapi-plugin-vtex#readme",
+  "bugs": {
+    "url": "https://github.com/andreciornavei/strapi-plugin-vtex/issues"
+  },
+  "keywords": [
+    "strapi",
+    "plugin",
+    "vtex",
+    "integration"
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.21.1",
+    "fb": "2.0.0",
+    "indicative": "7.4.4",
+    "jsonwebtoken": "8.5.1"
+  }
+}

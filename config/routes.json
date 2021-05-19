@@ -1,0 +1,163 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "handler": "auth.register"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login/facebook",
+      "handler": "auth.loginFacebook"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login/google",
+      "handler": "auth.loginGoogle"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/request_reset",
+      "handler": "auth.requestReset"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/reset",
+      "handler": "auth.reset"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "handler": "auth.login"
+    },
+    {
+      "method": "PUT",
+      "path": "/me",
+      "handler": "user.update",
+      "protected": true
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "handler": "user.findone",
+      "protected": true
+    },
+    {
+      "method": "GET",
+      "path": "/locations/cep/:cep",
+      "handler": "location.cep"
+    },
+    {
+      "method": "GET",
+      "path": "/locations/estados",
+      "handler": "location.states"
+    },
+    {
+      "method": "GET",
+      "path": "/locations/estados/:uf/municipios",
+      "handler": "location.cities"
+    },
+    {
+      "method": "GET",
+      "path": "/locations/municipios/:city/bairros",
+      "handler": "location.districts"
+    },
+    {
+      "method": "GET",
+      "path": "/me/addresses",
+      "handler": "address.find",
+      "protected": true
+    },
+    {
+      "method": "GET",
+      "path": "/me/addresses/:id",
+      "handler": "address.findone",
+      "protected": true
+    },
+    {
+      "method": "POST",
+      "path": "/me/addresses",
+      "handler": "address.create",
+      "protected": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/me/addresses/:id",
+      "handler": "address.delete",
+      "protected": true
+    },
+    {
+      "method": "PUT",
+      "path": "/me/addresses/:id",
+      "handler": "address.update",
+      "protected": true
+    },
+    {
+      "method": "GET",
+      "path": "/categories/level/:level",
+      "handler": "category.list"
+    },
+    {
+      "method": "GET",
+      "path": "/stores",
+      "handler": "store.list"
+    },
+    {
+      "method": "GET",
+      "path": "/products",
+      "handler": "product.search"
+    },
+    {
+      "method": "GET",
+      "path": "/products/autocomplete",
+      "handler": "product.autocomplete"
+    },
+    {
+      "method": "GET",
+      "path": "/products/:id",
+      "handler": "product.findone"
+    },
+    {
+      "method": "GET",
+      "path": "/skus/:id",
+      "handler": "sku.findone"
+    },
+    {
+      "method": "GET",
+      "path": "/orders",
+      "handler": "order.find",
+      "protected": true
+    },
+    {
+      "method": "GET",
+      "path": "/orders/:id",
+      "handler": "order.findone",
+      "protected": true
+    },
+    {
+      "method": "POST",
+      "path": "/orders",
+      "handler": "order.create"
+    },
+    {
+      "method": "POST",
+      "path": "/orders/simulation",
+      "handler": "order.simulation"
+    },
+    {
+      "method": "POST",
+      "path": "/companies",
+      "handler": "company.create"
+    },
+    {
+      "method": "GET",
+      "path": "/collections",
+      "handler": "collection.find"
+    },
+    {
+      "method": "GET",
+      "path": "/collections/:id/products",
+      "handler": "collection.products"
+    }
+  ]
+}
