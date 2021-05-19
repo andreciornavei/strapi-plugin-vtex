@@ -21,18 +21,18 @@ module.exports = {
   PRODUCT_FINDONE: (productId) => `/api/catalog/pvt/product/${productId}`,
   PRODUCT_VARIATIONS: (productId) => `/api/catalog_system/pub/products/variations/${productId}`,
   SKU_FINDONE: (skuId) => `/api/catalog/pvt/stockkeepingunit/${skuId}`,
-  SHIPPING_SIMULATION: () => `/api/checkout/pub/orderForms/simulation?sc=${process.env.VTEX_POLITICA_COMERCIAL}`,
-  ORDER_CREATE: () => `/api/checkout/pub/orders?sc=${process.env.VTEX_POLITICA_COMERCIAL}`,
-  ORDER_PREPARE_PAYMENT: (transactionId) => `${process.env.VTEX_BASEURL_PAYMENTS}/api/pub/transactions/${transactionId}/payments`,
+  SHIPPING_SIMULATION: () => `/api/checkout/pub/orderForms/simulation?sc=${process.env.VTEX_TRADE_POLICY}`,
+  ORDER_CREATE: () => `/api/checkout/pub/orders?sc=${process.env.VTEX_TRADE_POLICY}`,
+  ORDER_PREPARE_PAYMENT: (transactionId) => `https://${process.env.VTEX_SCOPE}.vtexpayments.com.br/api/pub/transactions/${transactionId}/payments`,
   ORDER_EXECUTE_PAYMENT: (orderGroup) => `/api/checkout/pub/gatewayCallback/${orderGroup}`,
   COLLECTION_FIND: ({ page, perPage }) => `/api/catalog_system/pvt/collection/search?page=${page || 1}&pageSize=${perPage || 15}`,
-  COLLECTION_PRODUCTS_FIND: ({ collectionId, page, perPage }) => `/api/catalog/pvt/collection/${collectionId}/products?page=${page || 1}&pageSize=${perPage || 10}&Active=true&Visible=true&SalesChannelId=${process.env.VTEX_POLITICA_COMERCIAL}`,
+  COLLECTION_PRODUCTS_FIND: ({ collectionId, page, perPage }) => `/api/catalog/pvt/collection/${collectionId}/products?page=${page || 1}&pageSize=${perPage || 10}&Active=true&Visible=true&SalesChannelId=${process.env.VTEX_TRADE_POLICY}`,
   SEARCH_PRODUCTS: ({
     searchTerm, filterBy, filterValue,
     filterValueTo, orderBy, orderType, page, perPage
   }) => {
     const filters = [
-      `fq=isAvailablePerSalesChannel_${process.env.VTEX_POLITICA_COMERCIAL}:0`
+      `fq=isAvailablePerSalesChannel_${process.env.VTEX_TRADE_POLICY}:0`
     ]
     if (searchTerm) {
       filters.push(`ft=${searchTerm}`)

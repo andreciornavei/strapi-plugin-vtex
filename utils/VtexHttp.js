@@ -2,7 +2,7 @@ const _ = require("lodash")
 const axios = require("axios")
 
 const VtexHttp = axios.create({
-  baseURL: process.env.VTEX_BASEURL,
+  baseURL: `https://${process.env.VTEX_SCOPE}.vtexcommercestable.com.br`,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
     'x-vtex-api-appkey': process.env.VTEX_API_KEY,

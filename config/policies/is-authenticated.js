@@ -10,7 +10,7 @@ module.exports = async (ctx, next) => {
       const [bearer, token] = authorization.split(" ")
       if (bearer !== "Bearer") return ctx.unauthorized("Your bearer authentication must provide a `Bearer` prefix.")
       if (!token) return ctx.unauthorized("Your bearer authentication must provide a token.")
-      const result = await axios.get(`${process.env.VTEX_BASEURL}/api/vtexid/pub/authenticated/user`, {
+      const result = await axios.get(`https://${process.env.VTEX_SCOPE}.vtexcommercestable.com.br/api/vtexid/pub/authenticated/user`, {
         headers: { "Cookie": `VtexIdclientAutCookie_casaevideodigital=${token};` }
       })
       const payload = jwt.decode(token)
