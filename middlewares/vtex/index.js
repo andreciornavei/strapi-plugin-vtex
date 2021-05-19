@@ -9,13 +9,12 @@ module.exports = strapi => {
 
       // Inject vtex authentication if route contains 'config.policies' attribute
       _.forEach(strapi.plugins['vtex'].config.routes, value => {
-
-        console.log("SETTING UP ", _.get(value, "path"), "WITH PREFIX", process.env.VTEX_API_PREFIX)
-
-        _.set(value, "config", { 
-          prefix: (process.env.VTEX_API_PREFIX || ""),
+        _.set(value, "config", {
           policies: []
         })
+        if (process.env.VTEX_API_PREFIX == "false") {
+          _.set(value, "config.prefix", "")
+        }
         if (_.get(value, 'protected')) {
           value.config.policies.unshift('plugins::vtex.is-authenticated');
         }

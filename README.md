@@ -2,7 +2,7 @@
 
 ## 🚀 &nbsp; _Overview_
 
-This plugin implements a complete purchase flow using the VTEX API, just install it and configure the environment variables to make the resources available for your front-end to consume.
+This plugin implements a complete purchase flow using the VTEX API, just install it and configure the environment variables to make the resources available for your front-end consume.
 
 ---
 
@@ -28,7 +28,7 @@ In particular, I prefer to configure and use plugin variables directly from the 
 So the only thing you need to do is describe this environment variables on your `.env` file for `development` environment and setup the same variables on your server for `production` environment.
 
 ```env
-VTEX_API_PREFIX=vtex
+VTEX_API_PREFIX=true
 VTEX_SCOPE=<yours-vtex-store-scope>
 VTEX_API_KEY=<yours-vtex-api-key>
 VTEX_API_SECRET=<yours-vtex-api-secret>
@@ -41,15 +41,15 @@ GOOGLE_APP_SECRET=<yours-google-app-secret>
 
 ### Describing each variable:
 
-`VTEX_API_PREFIX:` By default this plugin forces `no prefix` for url api resources, but you can define one to segment your api like `vtex` so your resources will look like **`(GET /vtex/me)`**.
+`VTEX_API_PREFIX:` (true) by default. With this flag, the plugin forces `/vtex` prefix to url api on all plugin routes, but you can disable it turning it to false, so your resources can look like **`(GET /vtex/me)`** or **`(GET /me)`** avoiding broken your other strapi implementations.
 
 `VTEX_SCOPE:` Is your vtex subdomain commerce scope, it is used to identify your store on VTEX API PLATFORM.
 
 `VTEX_API_KEY:` Is the generated API KEY used to get access to VTEX API PLATFORM.
-<br/>[(See this link tutorial to generate your access keys)](vtex-credentials)
+<br/>[(See this link tutorial to generate your access keys)](https://developers.vtex.com/vtex-rest-api/docs/getting-started-authentication)
 
 `VTEX_API_SECRET:` Is the generated API SECRET used to get access to VTEX API PLATFORM.
-<br/>[(See this link tutorial to generate your access keys)](vtex-credentials)
+<br/>[(See this link tutorial to generate your access keys)](https://developers.vtex.com/vtex-rest-api/docs/getting-started-authentication)
 
 `VTEX_TRADE_POLICY:` Is the configured trade policy in your VTEX PANEL to access your products and trade policies trought this plugin integration.
 
@@ -291,7 +291,7 @@ GOOGLE_APP_SECRET=<yours-google-app-secret>
 
 ## 🎉 &nbsp;  _Congradulations, You're done._
 
-I hope this documentation is clear and helps you understand how to configure yours VTEX API on strapi.
+With this plugin you will be able to expose all vtex purchase flow to your front-end applications and create new great features for them with strapi, of corse.
 
 ---
 
@@ -299,7 +299,4 @@ I hope this documentation is clear and helps you understand how to configure you
 
 This project is under the MIT license. See the [LICENSE](./LICENSE) for details.
 
-💻 &nbsp; Developed by André Ciornavei - [Get in touch!](linkedin)
-
-[linkedin]: https://www.linkedin.com/in/andreciornavei/
-[vtex-credentials]: https://developers.vtex.com/vtex-rest-api/docs/getting-started-authentication
+💻 &nbsp; Developed by André Ciornavei - [Get in touch!](https://www.linkedin.com/in/andreciornavei/)
