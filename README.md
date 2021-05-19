@@ -291,7 +291,7 @@ GOOGLE_APP_SECRET=<yours-google-app-secret>
 
 ## 🎉 &nbsp;  _Congradulations, You're done._
 
-I hope this documentation is clear and helps you understand how to configure a serverless application with terraform.
+I hope this documentation is clear and helps you understand how to configure yours VTEX API on strapi.
 
 ---
 
