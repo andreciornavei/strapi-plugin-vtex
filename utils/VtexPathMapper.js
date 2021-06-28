@@ -8,6 +8,8 @@ module.exports = {
   AUTH_VALIDATION: () => `/api/vtexid/pub/authentication/classic/validate`,
   UPDATE_USER: () => `/api/dataentities/CL/documents`,
   SEARCH_USER: (userId, fields = ["id"]) => `/api/dataentities/CL/search?userId=${userId}&_fields=${fields.join(",")}`,
+  WISHLIST_FIND: (userId) => `/api/dataentities/WS/search?userId=${userId}&_fields=id,userId,productsList`,
+  WISHLIST_UPDATE: (id) => `/api/dataentities/WS/documents/${id}`,
   SEARCH_ADDRESSESS: (userId) => `/api/dataentities/AD/search?userId=${userId}&_fields=addressName,addressType,city,complement,country,geoCoordinate,neighborhood,number,postalCode,receiverName,reference,state,street,id,userId`,
   ADDRESS_FINDONE: (addressId) => `/api/dataentities/AD/search?id=${addressId}&_fields=addressName,addressType,city,complement,country,geoCoordinate,neighborhood,number,postalCode,receiverName,reference,state,street,id,userId`,
   ADDRESS_DELETE: (addressId) => `/api/dataentities/AD/documents/${addressId}`,
@@ -32,7 +34,7 @@ module.exports = {
     filterValueTo, orderBy, orderType, page, perPage
   }) => {
     const filters = [
-      `fq=isAvailablePerSalesChannel_${process.env.VTEX_TRADE_POLICY}:0`
+      `fq=isAvailablePerSalesChannel_${process.env.VTEX_TRADE_POLICY}:1`
     ]
     if (searchTerm) {
       filters.push(`ft=${searchTerm}`)

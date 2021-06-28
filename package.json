@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-vtex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A strapi plugin that implements a complete purchase flow using the VTEX API.",
   "author": {
     "name": "André Ciornavei",
